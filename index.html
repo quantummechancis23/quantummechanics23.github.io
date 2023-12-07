@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tourney">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+	<title></title>
+	<style type="text/css">
+
+		body{
+			background-color: rgb(5, 5, 5);
+			margin: 0px;
+			overflow-x: hidden;
+		}
+
+		#lottieContainer {
+			width: 100vw;
+		  	display: flex;
+		  	justify-content: center;
+		  	align-items: center;
+		  	height: 100vh;
+		  	width: 100vw;
+		}
+
+		#lottiehead{
+			max-width: 100%;
+			max-height: 100%;
+			transition-property: opacity;
+			transition-duration: 0.7s;
+			scale: 0.9;
+		}
+
+		#coverHead{
+			position: absolute;
+			left: 4vw;
+			width: 100vw;
+			text-align: center;
+			top: 69vh;
+			font-family: "Black Ops One";
+			color: rgb(232, 143, 35);
+			font-size: 35px;
+			transition-property: opacity;
+			transition-duration: 1s;
+			opacity: 0;
+			scale: 0.9;
+		}
+
+		#firstpage{
+			position: absolute;
+			margin-top: 0px;
+			left: 0vw;
+			width: 40vw;
+			height: 700px;
+			border-radius: 4vw;
+			opacity: 1;
+			transition-property: opacity;
+			transition-duration: 1.5s;
+		}
+
+		#firstHead{
+			margin-top: 100px;
+			color: white;
+			font-family: "Bebas Neue";
+			font-size: 90px;
+			width: 100vw;
+			text-align: center;
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGSQehIO5ga3oDoU4_9N47Q1HxyXBPwMybDpKqOgEntSeLBOrE2bh0ZMTK9RbLn0khi8&usqp=CAU);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+			opacity: 0.7;
+		}
+
+		#gradient{
+			position: absolute;
+			top: 700px;
+			width: 100vw;
+			height: 3380px;
+			background-image: linear-gradient(to bottom, black, slateblue, #a5cee8, #fafdff, #fafdff);
+			opacity: 0.8;
+		}
+
+		#blurb1{
+			position: absolute;
+			left: 5vw;
+			top: 1200px;
+			width: 55vw;
+			height: 80vh;
+			background-color: rgb(255, 250, 250);
+			border-radius: 40px;
+			box-shadow: 0px 0px 100px rgb(125, 148, 219);
+			opacity: 0.7;
+			color: navy;
+			font-family: Articulat CF,system-ui,sans-serif;
+			padding-left: 5vw;
+		}
+
+		#blurbHead{
+			margin-top: 5vh;
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		#blurbLine{
+			margin-top: -2vh;
+			width: 90%;
+			height: 3px;
+			background-color: navy;
+			opacity: 0.5;
+		}
+
+		#blurbSubHead{
+			margin-top: 4vh;
+			font-size: 20px;
+			font-weight: bold;
+			opacity: 0.8;
+		}
+
+		#blurbText{
+			width: 90%;
+			opacity: 0.7;
+			margin-top: -3vh;
+		}
+
+		#lottie{
+			position: absolute;
+			left: 55vw;
+			top: 0px;
+		}
+
+		#teamContainer{
+			position: relative;
+			left: 15vw;
+			top: 100vh;
+			display: inline-flex;
+			opacity: 0.8;
+		}
+
+		.teamMember{
+			width: 300px;
+			height: 300px;
+			background-color: white;
+			border-radius: 30px;
+			margin: 10px;
+			transition: 1s;
+			box-shadow: 0px 0px 50px #0b71b3;
+		}
+
+		.teamMember:hover{
+			transition: 1s;
+			scale: 1.25;
+		}
+
+		.image{
+			border-radius: 30px;
+			width: 300px;
+			height: 300px;
+		}
+
+		.bio{
+			position: absolute;
+			padding-left: 10px;
+			top: 235px;
+			margin-left: 30px;
+			height: 60px;
+			width: 240px;
+			border-radius: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			transition: 1s;
+			font-family: Articulat CF,system-ui,sans-serif;
+			color: rgb(219, 103, 15);
+		}
+
+		#blurb2{
+			position: absolute;
+			left: 35vw;
+			top: 2900px;
+			width: 55vw;
+			height: 80vh;
+			background-color: rgba(250, 242, 222, 0.7);
+			border-radius: 40px;
+			box-shadow: 0px 0px 100px rgb(250, 234, 225);
+			color: navy;
+			font-family: Articulat CF,system-ui,sans-serif;
+			padding-left: 5vw;
+		}
+
+		#lottie2{
+			position: absolute;
+			left: -40vw;
+			top: 0px;
+			opacity: 0.8;
+		}
+
+		#contactContainer{
+			position: absolute;
+			left: 0px;
+			top: 4220px;
+			height: 260px;
+			width: 100vw;
+			background-color: white;
+			z-index: 10;
+			border-top-left-radius: 50px;
+			box-shadow: 0px 0px 300px -50px white;
+		}
+
+		#team{
+			position: absolute;
+			right: 0px;
+			top: -100px;
+			border-top-left-radius: 50px;
+			width: 630px;
+			height: 360px;
+		}
+
+		#contact{
+			position: absolute;
+			width: 700px;
+			top: 35px;
+			margin-left: 40px;
+			font-size: 30px;
+			font-family: Articulat CF,system-ui,sans-serif;
+			color: rgb(219, 103, 15);
+			border-bottom: 2px solid orangered;
+		}
+
+		#meme {
+			position: absolute;
+			padding-left: 10px;
+			top: 95px;
+			margin-left: 30px;
+			font-size: 20px;
+			font-family: Articulat CF,system-ui,sans-serif;
+			color: rgb(219, 103, 15);
+		}
+
+		#email {
+			position: absolute;
+			padding-left: 10px;
+			top: 125px;
+			margin-left: 30px;
+			font-size: 20px;
+			font-family: Articulat CF,system-ui,sans-serif;
+			color: rgb(219, 103, 15);
+		}
+
+		#adress{
+			position: absolute;
+			padding-left: 10px;
+			top: 95px;
+			margin-left: 280px;
+			font-size: 20px;
+			font-family: Articulat CF,system-ui,sans-serif;
+			color: rgb(219, 103, 15);
+		}
+
+		#qm{
+			position: absolute;
+			padding-left: 10px;
+			top: 95px;
+			margin-left: 560px;
+			font-size: 20px;
+			font-family: Articulat CF,system-ui,sans-serif;
+			color: rgb(219, 103, 15);
+		}
+
+
+	</style>
+</head>
+
+<script type="text/javascript">
+		window.onload = function(){
+			setTimeout(()=>{
+				window.scrollTo(0, 0);
+			}, 50)
+
+			setTimeout(()=>{
+				coverHead.style.opacity = "1"
+			}, 3500)
+			setTimeout(()=>{
+				cover.style.transitionProperty = "opacity"
+				cover.style.transitionDuration = "1s"
+				cover.style.opacity = "0"
+			}, 4700)
+			setTimeout(()=>{
+				cover.style.display = "none"
+			}, 5700)
+		}
+
+		document.addEventListener("click", ()=>{
+			cover.style.transition = "1s"
+			cover.style.opacity = "0"
+			setTimeout(()=>{
+				cover.style.display = "none"
+			}, 1000)
+		})
+
+		document.addEventListener("scroll", function(scroll){	
+			console.log(window.pageYOffset)
+
+			if (window.pageYOffset < 150){
+				lottiehead.style.scale = 0.9 + window.pageYOffset/1000
+				coverHead.style.scale = 0.9 + window.pageYOffset/1000
+				coverHead.style.transform = "translateY("+ window.pageYOffset/10 + "px)"
+				firstpage.style.transform = "translateY("+ window.pageYOffset + "px)"
+				firstHead.style.backgroundPosition = window.pageYOffset + 'px 0';
+			}
+			else if (window.pageYOffset < 200){
+				lottiehead.style.opacity = "1"
+				cover.style.transition= "1s"
+				cover.style.opacity = "0"
+				coverHead.style.opacity = "0"
+				firstpage.style.transform = "translateY("+ window.pageYOffset + "px)"
+				firstHead.style.backgroundPosition = window.pageYOffset + 'px 0';
+			} else if(window.pageYOffset < 400){
+				coverHead.style.opacity = "0"
+				firstpage.style.transform = "translateY("+ window.pageYOffset + "px)"
+				firstHead.style.backgroundPosition = window.pageYOffset + 'px 0';
+				firstHead.style.scale = 1 + (window.pageYOffset-200)/400
+				lottiehead.style.opacity = "0"
+			} else if(window.pageYOffset > 1950 && window.pageYOffset < 2550){
+				coverHead.style.opacity = "0"
+				blurb1.style.transform = "translateY("+ (window.pageYOffset-1950) + "px)";
+				teamContainer.style.transform = "translateX("+ -2*(window.pageYOffset-1950) + "px) translateY("+ (window.pageYOffset-1950) + "px)";
+			}
+		})
+</script>
+
+<body>
+	<div id="firstpage">
+		<h1 id="firstHead">FTC Robotics: 6051</h1>
+		<div id="lottieContainer">
+			<video width="1200" height="800" autoplay muted loop preload>
+			  <source src="./linesAnimation.mp4" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+		</div>
+		<div id="gradient"></div>
+		<div id="blurb1">
+			<h2 id="blurbHead">About Us</h2>
+			<div id="blurbLine"></div>
+			<h5 id="blurbSubHead">Sample head</h5>
+			<p id="blurbText">Sample text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text</p>
+			<h5 id="blurbSubHead">Sample head</h5>
+			<p id="blurbText">Sample text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text</p>
+			<dotlottie-player id="lottie" src="https://lottie.host/4f6a515d-343a-416b-9d45-27f2bea2bd8d/fFVrOedjNH.json" background="transparent" speed="0.6" style="width: 40vw; height: 40vw" direction="1" mode="bounce" intermission="1s" loop autoplay></dotlottie-player>	
+		</div>
+		<div id="teamContainer">
+			<!-- Anya -->
+			<div class="teamMember" id="anya">
+				<img class="image" src="./anya.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Anya Levin</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Software, CAD</p>
+				</div>
+			</div>
+			<!-- Ashwin -->
+			<div class="teamMember" id="ashwin">
+				<img class="image" src="./ashwin.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Ashwin Ranjan</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Software</p>
+				</div>
+			</div>
+			<!-- Carter -->
+			<div class="teamMember" id="carter">
+				<img class="image" src="./carter.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Carter Lee-Millstein</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Hardware</p>
+				</div>
+			</div>
+			<!-- Cooper -->
+			<div class="teamMember" id="cooper">
+				<img class="image" src="./cooper.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Cooper Hartog</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Hardware</p>
+				</div>
+			</div>
+			<!-- Jodany -->
+			<div class="teamMember" id="jodany">
+				<img class="image" src="./jodany.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Jodany Fanord</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Hardware</p>
+				</div>
+			</div>
+			<!-- Leila -->
+			<div class="teamMember" id="leila">
+				<img class="image" src="./leila.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Leila Clinton</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Hardware</p>
+				</div>
+			</div>
+			<!-- Alex -->
+			<div class="teamMember" id="alex">
+				<img class="image" src="./alex.jpg">
+				<div class="bio">
+					<h5 style="font-size: 16px; font-weight: bold; margin-top: 14px;">Alex Berman</h5>
+					<p style="font-size: 14px; margin-top: -27px;">Software, Airplane</p>
+				</div>
+			</div>
+		</div>
+		<div id="blurb2">
+			<h2 id="blurbHead" style="color: rgb(227, 107, 9);">The Robot</h2>
+			<div id="blurbLine" style="background-color: rgb(232, 122, 32);"></div>
+			<h5 id="blurbSubHead" style="color: rgb(217, 99, 2);">Chasis</h5>
+			<p id="blurbText" style="color: rgb(217, 99, 2);">Sample text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text</p>
+			<h5 id="blurbSubHead" style="color: rgb(217, 99, 2);">Intake</h5>
+			<p id="blurbText" style="color: rgb(217, 99, 2);">Sample text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text</p>
+			<h5 id="blurbSubHead" style="color: rgb(217, 99, 2);">Software</h5>
+			<p id="blurbText" style="color: rgb(217, 99, 2);">Sample text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text text ample text ample text ample text ample text ample text</p>
+			<dotlottie-player id="lottie2" src="https://lottie.host/faf20766-d3b9-4214-aa37-eaf5feafc02d/s23YaNXiKI.json" background="transparent" speed="0.4" style="width: 45vw; height: 45vw" direction="1" mode="bounce" intermission="1s" loop autoplay></dotlottie-player>	
+		</div>
+	</div>
+
+	<!-- HEAD -->
+	<div id="cover" style="width: 100vw; height: 100vh; position: fixed; background: black;">
+		<div id="lottieContainer">
+			<video id="lottiehead" width="1200" height="800" autoplay muted preload>
+			  <source src="./qmLottie.mp4" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+			<div id="coverHead">
+				Mechanics
+			</div>	
+		</div>
+	</div>
+	<div id="contactContainer">
+		<img id="team" src="./team.jpg">
+		<div id="contact">Contact</div>
+		<div id="meme">email@gmail.com</div>
+		<div id="email">@ftcmemepage</div>
+		<div id="adress">108 e 89st <br/> New York, NY 10128</div>
+		<div id="qm">Quantum Mechanics <br/> The Dalton School</div>
+	</div>
+</body>
+</html>
