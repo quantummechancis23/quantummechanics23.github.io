@@ -404,7 +404,7 @@
 		#teamContainer{
 			position: relative;
 			left: 15vw;
-			top: 1100px;
+			top: 1120px;
 			display: inline-flex;
 			opacity: 0.8;
 		}
@@ -468,7 +468,7 @@
 		#contactContainer{
 			position: absolute;
 			left: 0px;
-			top: 4900px;
+			top: 4920px;
 			height: 260px;
 			width: 300px;
 			background-color: white;
@@ -547,10 +547,13 @@
 			setTimeout(()=>{
 				window.scrollTo(0, 0);
 			}, 50)
-
-			setTimeout(()=>{
-				coverHead.style.opacity = "1"
-			}, 3500)
+			if (window.innerWidth > 600){
+				setTimeout(()=>{
+					coverHead.style.opacity = "1"
+				}, 3500)
+			} else {
+				cover.style.display="none"
+			}
 			setTimeout(()=>{
 				cover.style.transitionProperty = "opacity"
 				cover.style.transitionDuration = "1s"
@@ -605,6 +608,7 @@
 				coverHead.style.transform = "translateY("+ window.pageYOffset/10 + "px)"
 				firstpage.style.transform = "translateY("+ window.pageYOffset + "px)"
 				firstHead.style.backgroundPosition = window.pageYOffset + 'px 0';
+				cover.style.opacity="0"
 			}
 			else if (window.pageYOffset < 200){
 				lottiehead.style.opacity = "1"
